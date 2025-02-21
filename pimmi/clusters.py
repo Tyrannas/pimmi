@@ -1,3 +1,4 @@
+import io
 import sys
 import glob
 import pickle
@@ -32,6 +33,7 @@ def from_clusters_to_viz(clusters_file, viz_file):
     clusters = {}
 
     reader = casanova.reader(clusters_file)
+
     path_pos = reader.headers.path
     cluster_id_pos = reader.headers.cluster_id
     quality_pos = reader.headers.quality
@@ -146,7 +148,7 @@ def generate_clusters(results_pattern, merged_meta_file, clusters_file, nb_match
 
     writer = casanova.writer(
         clusters_file,
-        ["path", "image_id", "nb_points", "degree", "cluster_id", "quality"]
+        ["path", "image_id", "nb_points", "degree", "cluster_id", "quality"],
     )
     for nb_matches, community_id, node_degrees in yield_communities(g, algo):
         nb_points = []
