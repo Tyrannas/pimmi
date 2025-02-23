@@ -2,9 +2,7 @@
 # Pimmi Functional Tests
 # =============================================================================
 import csv
-import logging
 import math
-import os
 import sys
 from os import remove, listdir
 import glob

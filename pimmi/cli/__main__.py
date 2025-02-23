@@ -4,8 +4,6 @@
 # =============================================================================
 #
 # CLI enpoint of the Pimmi library.
-import io
-import os
 import csv
 import sys
 import shutil
